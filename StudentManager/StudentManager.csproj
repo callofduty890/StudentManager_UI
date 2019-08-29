@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataGridViewStyle.cs" />
     <Compile Include="Common\DataValidate.cs" />
     <Compile Include="FrmAbout.cs">
       <SubType>Form</SubType>

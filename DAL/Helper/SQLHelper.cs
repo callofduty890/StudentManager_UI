@@ -116,6 +116,34 @@ namespace DAL.Helper
         }
 
         /// <summary>
+        /// 执行返回数据集的查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public static DataSet GetDataSet(string sql)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd); //创建数据适配器对象
+            DataSet ds = new DataSet();//创建一个内存数据集
+            try
+            {
+                conn.Open();
+                da.Fill(ds);  //使用数据适配器填充数据集
+                return ds;  //返回数据集
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        /// <summary>
         /// 获取服务器的时间
         /// </summary>
         /// <returns></returns>
