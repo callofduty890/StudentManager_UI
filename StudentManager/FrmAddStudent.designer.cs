@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddStudent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(142, 21);
             this.txtStudentName.TabIndex = 0;
+            this.txtStudentName.Text = "蔡俊华";
             // 
             // label2
             // 
@@ -126,6 +127,7 @@
             this.txtStudentIdNo.Name = "txtStudentIdNo";
             this.txtStudentIdNo.Size = new System.Drawing.Size(276, 21);
             this.txtStudentIdNo.TabIndex = 5;
+            this.txtStudentIdNo.Text = "452702199402164778";
             // 
             // label5
             // 
@@ -143,6 +145,7 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(167, 21);
             this.txtPhoneNumber.TabIndex = 7;
+            this.txtPhoneNumber.Text = "13710494649";
             // 
             // label6
             // 
@@ -164,6 +167,7 @@
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
+            this.rdoMale.Checked = true;
             this.rdoMale.Location = new System.Drawing.Point(300, 34);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(35, 16);
@@ -190,6 +194,7 @@
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(143, 21);
             this.dtpBirthday.TabIndex = 3;
+            this.dtpBirthday.Value = new System.DateTime(1994, 2, 16, 22, 44, 0, 0);
             // 
             // label7
             // 
@@ -252,6 +257,7 @@
             this.txtCardNo.Name = "txtCardNo";
             this.txtCardNo.Size = new System.Drawing.Size(143, 21);
             this.txtCardNo.TabIndex = 6;
+            this.txtCardNo.Text = "0006406666";
             // 
             // pbStu
             // 
@@ -394,14 +400,14 @@
             this.dgvStudentList.AllowUserToAddRows = false;
             this.dgvStudentList.AllowUserToDeleteRows = false;
             this.dgvStudentList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvStudentList.ColumnHeadersHeight = 30;
             this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentId,
@@ -410,26 +416,26 @@
             this.Birthday,
             this.CardNo,
             this.ClassName});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvStudentList.EnableHeadersVisualStyles = false;
             this.dgvStudentList.Location = new System.Drawing.Point(33, 430);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentList.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvStudentList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvStudentList.RowTemplate.Height = 23;
             this.dgvStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

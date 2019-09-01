@@ -16,7 +16,7 @@ namespace DAL.Helper
     class SQLHelper
     {
         //连接语句
-        private static readonly string connString = "Server=.;DataBase=StudentManageDB;Uid=sa;Pwd=password01!";
+        private static readonly string connString = "Server=.;DataBase=SMDB;Uid=sa;Pwd=password01!";
         //private static readonly string connString = "Server=.;DataBase=StudentManageDB;Uid=sa;Pwd=123456";
         /// <summary>
         /// 增删改执行命令
