@@ -53,7 +53,30 @@ namespace StudentManager
         //根据学号查询
         private void btnQueryById_Click(object sender, EventArgs e)
         {
-          
+            if (this.txtStudentId.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("请输入学号！", "提示信息");
+                this.txtStudentId.Focus();
+                return;
+            }
+            if (!Common.DataValidate.IsInteger(this.txtStudentId.Text.Trim()))
+            {
+                MessageBox.Show("学号必须是正整数！", "提示信息");
+                this.txtStudentId.SelectAll();
+                this.txtStudentId.Focus();
+                return;
+            }
+            StudentExt objStudent = objStuService.GetStudentById(this.txtStudentId.Text.Trim());
+            if (objStudent == null)
+            {
+                MessageBox.Show("学员信息不存在！", "提示信息");
+                this.txtStudentId.Focus();
+            }
+            else
+            {
+                FrmStudentInfo objStuInfo = new FrmStudentInfo(objStudent);
+                objStuInfo.Show();
+            }
         }
         private void txtStudentId_KeyDown(object sender, KeyEventArgs e)
         {
