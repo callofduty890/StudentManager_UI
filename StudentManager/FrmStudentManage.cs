@@ -7,21 +7,48 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using DAL;
+using Models.Ext;
+using Models;
 
 namespace StudentManager
 {
     public partial class FrmStudentManage : Form
     {
+        private StudentClassService objClassService = new StudentClassService();
+        private StudentService objStuService = new StudentService();
+        private List<StudentExt> list = null;
+
 
         public FrmStudentManage()
         {
             InitializeComponent();
-        
+            //初始化班级下拉框
+            this.cboClass.DataSource = objClassService.GetAllClasses();
+            this.cboClass.DisplayMember = "ClassName";
+            this.cboClass.ValueMember = "ClassId";
+
         }
         //按照班级查询
         private void btnQuery_Click(object sender, EventArgs e)
         {
-        
+            if (this.cboClass.SelectedIndex == -1)
+            {
+                MessageBox.Show("请选则班级！", "提示");
+                return;
+            }
+            this.dgvStudentList.AutoGenerateColumns = false;    //不显示未封装的属性
+            //执行查询并绑定数据
+            list = objStuService.GetStudentByClass(this.cboClass.Text);
+            this.dgvStudentList.DataSource = list;
+            //修改样式显示样式
+            new Common.DataGridViewStyle().DgvStyle1(this.dgvStudentList);
+
+            //让标题彻底居中，消除排序按钮的影响
+            foreach (DataGridViewColumn item in this.dgvStudentList.Columns)
+            {
+                item.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         //根据学号查询
         private void btnQueryById_Click(object sender, EventArgs e)
@@ -50,12 +77,23 @@ namespace StudentManager
         //姓名降序
         private void btnNameDESC_Click(object sender, EventArgs e)
         {
-         
+            if (this.dgvStudentList.RowCount == 0)
+            {
+                return;
+            } 
+            list.Sort(new NameDESC());
+            this.dgvStudentList.Refresh();
         }
         //学号降序
         private void btnStuIdDESC_Click(object sender, EventArgs e)
         {
-         
+            if (this.dgvStudentList.RowCount == 0)
+            {
+                return;
+            } 
+            list.Sort(new StuIdDESC());
+            //刷新显示
+            this.dgvStudentList.Refresh();
         }
         //添加行号
         private void dgvStudentList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -80,5 +118,22 @@ namespace StudentManager
         }
     }
 
-   
+    #region 实现排序
+    //学生姓名的排序
+    class NameDESC : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return y.StudentName.CompareTo(x.StudentName);
+        }
+    }
+    //学生ID的排序
+    class StuIdDESC : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return y.StudentId.CompareTo(x.StudentId);
+        }
+    }
+    #endregion
 }
