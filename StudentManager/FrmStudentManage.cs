@@ -160,7 +160,7 @@ namespace StudentManager
         //添加行号
         private void dgvStudentList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-        
+            Common.DataGridViewStyle.DgvRowPostPaint(this.dgvStudentList, e);
         }
         //打印当前学员信息
         private void btnPrint_Click(object sender, EventArgs e)
